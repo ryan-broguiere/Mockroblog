@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User !</title>
+    <title>About Us!</title>
     <link rel="stylesheet" href="styles/tailwind.css">
-    <script type="module" src="scripts/aboutus.js"></script>
+    <script type="module" src="scripts/post.js"></script>
 </head>
 
-<body class="antialiased  text-gray-800">
+<body>
     <div class="py-8">
         <header>
             <!-- navbar goes here -->
@@ -34,21 +34,21 @@
                                 <a href="public.html" class="py-5 px-3 text-gray-700 hover:text-blue-500">
                                     Public
                                 </a>
-                                <a href="user.html" class="py-5 px-3 text-blue-500 hover:text-blue-500">
+                                <a href="user.html" class="py-5 px-3 text-gray-700 hover:text-blue-500">
                                     User
                                 </a>
                                 <a href="home.html" class="py-5 px-3 text-gray-700 hover:text-blue-500">
                                     Home
                                 </a>
-                                <a href="post.html" class="py-5 px-3 text-gray-700 hover:text-blue-500">
+                                <a href="post.html" class="py-5 px-3 text-blue-500 hover:text-blue-500">
                                     Post
                                 </a>
                             </div>
                         </div>
                         <!-- secondary nav -->
                         <div class="hidden md:flex items-center space-x-1">
-                            <a class="py-5 px-3 text-gray-700 hover:text-blue-500" href="aboutus.html">
-                                About Us
+                            <a class="py-5 px-3 text-gray-700 hover:text-blue-500" href="/">
+                                Login
                             </a>
                             <a class="py-1 px-3 bg-yellow-400 text-yellow-900 rounded shadow-lg hover:bg-yellow-300 hover:text-yellow-800 transition duration-300 "
                                 href="#">
@@ -76,73 +76,23 @@
         </header>
     </div>
 
-    <!-- CONTEXT OF WEBSITE STARTS HERE -->
-    <div class="container px-6 py-4 mx-auto">
+    <!-- content goes here -->
+    <div class="max-w-5xl py-10 px-5 m-auto w-full mt-10">
 
-        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/263F418F2C47943D98B2877ECAD174927FBBD359C4AFB45BE0C6A22AD589D22E/scale?width=300&amp;aspectRatio=1&amp;format=png"
-            alt="" class="h-24 w-24 object-cover rounded-full shadow-md">
-
-        <div class="timeline-container"> </div>
-        <div class="timeline-pointer" aria-hidden="true">
-            <div class="bg-white p-6 rounded-md shadow-md">
-                <span class="font-bold text-indigo-600 text-sm tracking-wide"> -DATE GOES HERE-</span>
-
-                <p class="pt-1">
-                    -POST/TWEET GOES HERE-
-                </p>
-            </div>
+        <div class="text-3xl mb-6 text-center ">
+          What's on your mind?
         </div>
-        <div class="timeline-container"> </div>
-        <div class="timeline-pointer" aria-hidden="true">
-            <div class="bg-white p-6 rounded-md shadow-md">
-                <span class="font-bold text-indigo-600 text-sm tracking-wide"> -DATE GOES HERE-</span>
-
-                <p class="pt-1">
-                    -POST/TWEET GOES HERE-
-                </p>
-            </div>
+        <div class="grid grid-cols-2 gap-4 max-w-2xl m-auto">      
+          <div class="col-span-2">
+            <textarea cols="30" rows="8" class="border-solid border-black border-2 p-3 md:text-xl w-full placeholder-blue-400 resize-none bg-gray-50 id" id="text-post" placeholder="Message"></textarea>
+          </div>
+          <div class="col-span-2 text-right">
+            <button class="btn-post py-3 px-6 bg-blue-400 text-white font-bold w-full sm:w-32 rounded">
+              Post
+            </button>
+          </div>
         </div>
-        <div class="timeline-container"> </div>
-        <div class="timeline-pointer" aria-hidden="true">
-            <div class="bg-white p-6 rounded-md shadow-md">
-                <span class="font-bold text-indigo-600 text-sm tracking-wide"> -DATE GOES HERE-</span>
-
-                <p class="pt-1">
-                    -POST/TWEET GOES HERE-
-                </p>
-            </div>
-        </div>
-        <div class="timeline-container"> </div>
-        <div class="timeline-pointer" aria-hidden="true">
-            <div class="bg-white p-6 rounded-md shadow-md">
-                <span class="font-bold text-indigo-600 text-sm tracking-wide"> -DATE GOES HERE-</span>
-
-                <p class="pt-1">
-                    -POST/TWEET GOES HERE-
-                </p>
-            </div>
-        </div>
-        <div class="timeline-container"> </div>
-        <div class="timeline-pointer" aria-hidden="true">
-            <div class="bg-white p-6 rounded-md shadow-md">
-                <span class="font-bold text-indigo-600 text-sm tracking-wide"> -DATE GOES HERE-</span>
-
-                <p class="pt-1">
-                    -POST/TWEET GOES HERE-
-                </p>
-            </div>
-        </div>
-        <div class="timeline-container"> </div>
-        <div class="timeline-pointer" aria-hidden="true">
-            <div class="bg-white p-6 rounded-md shadow-md">
-                <span class="font-bold text-indigo-600 text-sm tracking-wide"> -DATE GOES HERE-</span>
-
-                <p class="pt-1">
-                    -POST/TWEET GOES HERE-
-                </p>
-            </div>
-        </div>
-    </div>
+      </div>
 
     <!-- FOOTER SECTION -->
     <footer class="text-gray-600 body-font bottom-0">
