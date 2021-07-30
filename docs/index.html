@@ -49,8 +49,8 @@
                             <a class="py-5 px-3 text-gray-700 hover:text-blue-500" href="aboutus.html">
                                 About Us
                             </a>
-                            <a class="py-1 px-3 bg-yellow-400 text-yellow-900 rounded shadow-lg hover:bg-yellow-300 hover:text-yellow-800 transition duration-300 "
-                                href="#">
+                            <a class="signup-nav py-1 px-3 bg-yellow-400 text-yellow-900 rounded shadow-lg hover:bg-yellow-300 hover:text-yellow-800 transition duration-300 " 
+                             href="#">
                                 Sign Up
                             </a>
                         </div>
@@ -81,35 +81,62 @@
 
         <img src="./images/tailwind-logo.png" class="border-8 justify-center hover:opacity-90">
         <h1 class="text-5xl font-extrabold">Team5 Blogs</h1>
-
-        <div class="bg-white shadow-xl rounded p-5">
+        <!--Login window starts here-->
+        <div class="login-container bg-white shadow-xl rounded p-5"> 
 
             <form class="space-y-5 mt-5">
                 <p class="text 2x1 font-bold"> Username: </p>
                 <input type="text" class="input-username w-full h-12 border border-blue-400 rounded px-3"
-                    placeholder="Enter Username here" />
+                    placeholder="Enter Username here" required/>
 
                 <p class="text 2x1 font-bold"> Password: </p>
 
                 <input type="password" class="input-password w-full h-12 border border-blue-400 rounded px-3"
-                    placeholder="Enter Password here" />
+                    placeholder="Enter Password here" required/>
 
 
-                <button
-                    class="btn-login text-center w-full bg-blue-400 rounded-md text-white py-3 font-medium hover:bg-green-400"><a
-                        href="#">Login</a></button>
+                <button class="btn-login text-center w-full bg-blue-400 rounded-md text-white py-3 font-medium hover:bg-green-400">
+                    <a href="#">Login</a></button>
 
+                <p class ="text 2x1 font-bold text-center"> Don't have an account?</p>
 
-                        <p class ="text 2x1 font-bold text-center"> Don't have an account?</p>
-
-                        <button
-                    class="btn-signup text-center w-full bg-blue-400 rounded-md text-white py-3 font-medium hover:bg-green-400"><a
-                        href="#">Sign Up</a></button>
+                <button class="btn-signup text-center w-full bg-blue-400 rounded-md text-white py-3 font-medium hover:bg-green-400">
+                    <a href="#">Sign Up</a></button>
             </form>
 
         </div>
+        <!--Login window ends here-->
+
+        <!--Sign up window-->
+        
+        <div class="signup-container hidden bg-white shadow-xl rounded p-5"> 
+
+            <form class="space-y-5 mt-5">
+                <p class="text 2x1 font-bold"> Email Address: </p>
+                <input type="text" class="create-email w-full h-12 border border-blue-400 rounded px-3"
+                    placeholder="Enter Email Address here" required/>
+                <p class = "hidden text-red-600 font-bold" id = "eerror"></p>
+                <p class="text 2x1 font-bold"> Username: </p>
+
+                <input type="text" class="create-username w-full h-12 border border-blue-400 rounded px-3"
+                    placeholder="Enter Desired Username here" required/>
+                <p class = "hidden text-red-600 font-bold" id = "uerror"></p>
+                <p class="text 2x1 font-bold"> Password: </p>
+
+                <input type="password" class="create-password w-full h-12 border border-blue-400 rounded px-3"
+                    placeholder="Enter Desired Password here" required/>
+
+                <p class = "hidden text-red-600 font-bold" id = "perror"></p>
+                <button class="btn-create text-center w-full bg-blue-400 rounded-md text-white py-3 font-medium hover:bg-green-400">
+                    <a href="#">Create Account</a></button>
+            </form>
+
+        </div>
+        
+        <!--Sign up window ends-->
+
     </div>
-</body>
+
 <!-- FOOTER SECTION -->
 <footer class="text-gray-600 body-font fixed bottom-0">
     <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
@@ -127,5 +154,5 @@
         </p>
     </div>
 </footer>
-
+</body>
 </html>
