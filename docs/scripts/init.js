@@ -37,6 +37,7 @@ btnLogIn.addEventListener('click', (e) =>{
     
     if (testUser != null)
     {
+        e.preventDefault()
         alert(`Login Successful \n\nWelcome ${testUser.username}`); 
         location.href = "user.html";
                 
