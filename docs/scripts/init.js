@@ -29,6 +29,7 @@ let createUser
 let uerrorMessage
 let eerrorMessage
 let perrorMessage
+let fakeEmail
 
 //Event Listeners 
 btnLogIn.addEventListener('click', (e) =>{
@@ -46,17 +47,28 @@ btnLogIn.addEventListener('click', (e) =>{
     else if (inputUsername.value == '' || inputUsername.value == null)
     {   
         e.preventDefault();
-        alert('Login Failed \n\nUsername cannot be empty');       
+        alert('Login Failed \n\nUsername cannot be empty.')       
     }
-    else if (inputUsername.value != 'ProfAvery' || inputUsername.value != 'KevinAWortman' || inputUsername.value != 'Beth_CSUF')
+    //Disabled for security reasons
+    // else if (inputUsername.value != 'ProfAvery' || inputUsername.value != 'KevinAWortman' || inputUsername.value != 'Beth_CSUF')
+    // {
+    //     e.preventDefault();
+    //     alert('Login Failed \n\nUsername not recognized');
+    // }
+    // else if (inputUsername.value == 'ProfAvery' || inputUsername.value == 'KevinAWortman' || inputUsername.value == 'Beth_CSUF')
+    // {
+    //     e.preventDefault();
+    //     alert('Login Failed \n\nIncorrect Password');
+    // }
+    else if (inputPassword.value == '' || inputPassword.value == null)
     {
         e.preventDefault();
-        alert('Login Failed \n\nUsername not recognized');
+        alert('Login Failed \n\nPassword cannot be empty.')
     }
-    else if (inputUsername.value == 'ProfAvery' || inputUsername.value == 'KevinAWortman' || inputUsername.value == 'Beth_CSUF')
+    else 
     {
         e.preventDefault();
-        alert('Login Failed \n\nIncorrect Password');
+        alert('Login Failed \n\nUsername or password do not match any credentials in the system.')
     }
 
   
@@ -83,50 +95,59 @@ textLogin.addEventListener('click', () =>{
 })
 
 btnCreate.addEventListener('click', (e) => {
-    emailErrorElement.textContent =""
-    userErrorElement.textContent =""
-    passwordErrorElement.textContent =""
+       
     createUser = mockroblog.createUser(createUserAcc.value, createUserEmail.value, createUserPassword.value);
-   
-    if (createUserEmail.value.length < 6)
+    
+    for (let i =0; i < createUserEmail.value.length; i++)
     {
-        eerrorMessage = 'Please enter a valid email address.'
+        console.log(createUserEmail.value[i])
+        if (createUserEmail.value[i] == '@')
+        {
+            fakeEmail = 0;
+            break;
+        }
+        else if (i == createUserEmail.value.length-1)
+        {
+            e.preventDefault()
+            eerrorMessage = 'Please enter a valid email address.'
+            emailErrorElement.innerText = eerrorMessage
+            eerror.classList.toggle("hidden")
+            fakeEmail = 1;
+        }
+        
     }
-    if (createUserAcc.value.length < 4 || createUserAcc.value.length > 20)
+
+    if (createUserAcc.value.length>=4 &&createUserEmail.value.length>=7 &&createUserPassword.value.length>=8 && fakeEmail != 1)
     {
-        uerrorMessage = 'Username must be between 4 - 20 characters.'
+        alert(`User successfully created.\n\n Email:${createUser.email} \n\n Username: ${createUser.username} \n\n Password: ${createUser.password}`)
+        location.href = "user.html";
+
     }
-    if (createUserPassword.value == ''|| createUserPassword.value == null)
-    {
-        //alert(`Password cannot be empty`)
-    }
-    // alert(`"${createUser.email}" made an account\n\nUsername: ${createUser.username} \n\nPassword: ${createUser.password}`)
-    if (eerrorMessage.length > 0 )
+    else if (createUserEmail.value.length < 7)
     {
         e.preventDefault()
+        eerrorMessage = 'Please enter a valid email address.'
         emailErrorElement.innerText = eerrorMessage
-        // userErrorElement.innerText = uerrorMessage
-        // passwordErrorElement.innerText = perrorMessage
         eerror.classList.toggle("hidden")
-        // uerror.classList.toggle("hidden")
-        // perror.classList.toggle("hidden")
-        
-    
+    }
+    else if (createUserAcc.value.length < 4 || createUserAcc.value.length > 20)
+    {
+        e.preventDefault()
+        uerrorMessage = 'Username must be between 4 - 20 characters.'
+        userErrorElement.innerText = uerrorMessage
+        uerror.classList.toggle("hidden")
+    }
+    else if (createUserPassword.value.length < 8 || createUserPassword.value.length > 25)
+    {
+        e.preventDefault()
+        perrorMessage = 'Password must be between 8 - 25 characters.'
+        passwordErrorElement.innerText = perrorMessage
+        perror.classList.toggle("hidden")
     }
 
-    // if (uerrorMessage.length > 0)
-    // {
-    //     e.preventDefault()
-    //     userErrorElement.innerText = uerrorMessage
-    //     uerror.classList.toggle("hidden")
-    // }
-
-    // if (perrorMessage.length > 0)
-    // {
-    //     e.preventDefault()
-    //     passwordErrorElement.innerText = perrorMessage
-    //     perror.classList.toggle("hidden")
-    // }
+  
+    
+    
 })
 
 
