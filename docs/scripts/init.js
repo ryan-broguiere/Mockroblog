@@ -22,6 +22,7 @@ const createUserPassword = document.querySelector(".create-password")
 const emailErrorElement = document.getElementById('eerror')
 const userErrorElement = document.getElementById('uerror')
 const passwordErrorElement = document.getElementById('perror')
+const textLogin = document.querySelector('.text-login')
 
 let testUser
 let createUser
@@ -66,27 +67,19 @@ btn.addEventListener('click', () => {
     menu.classList.add("hidden")
 })
 
-btnSignUp.addEventListener('click', (e) => {
-    e.preventDefault()
+btnSignUp.addEventListener('click', () => {
     loginContainer.classList.toggle("hidden")
     signupContainer.classList.toggle("hidden")
-    signupNav.textContent = "Login"
+    signupNav.textContent = "Login"  
+})
+
+signupNav.addEventListener('click', () => {
+    logInSignupHelper()
        
 })
 
-signupNav.addEventListener('click', (e) => {
-    e.preventDefault()
-    loginContainer.classList.toggle("hidden")
-    signupContainer.classList.toggle("hidden")
-    if (loginContainer.classList.contains("hidden"))
-    {
-        signupNav.textContent = "Login"
-    }
-    else
-    {
-        signupNav.textContent = "Sign Up"
-    }
-       
+textLogin.addEventListener('click', () =>{
+    logInSignupHelper()
 })
 
 btnCreate.addEventListener('click', (e) => {
@@ -136,3 +129,18 @@ btnCreate.addEventListener('click', (e) => {
     // }
 })
 
+
+// Helper functions
+function logInSignupHelper(){
+    loginContainer.classList.toggle("hidden")
+    signupContainer.classList.toggle("hidden")
+
+    if (loginContainer.classList.contains("hidden"))
+    {
+        signupNav.textContent = "Login"
+    }
+    else
+    {
+        signupNav.textContent = "Sign Up"
+    } 
+}

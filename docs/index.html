@@ -49,8 +49,8 @@
                             <a class="py-5 px-3 text-gray-700 hover:text-blue-500" href="aboutus.html">
                                 About Us
                             </a>
-                            <a class="signup-nav py-1 px-3 bg-yellow-400 text-yellow-900 rounded shadow-lg hover:bg-yellow-300 hover:text-yellow-800 transition duration-300 " 
-                             href="#">
+                            <a class="signup-nav py-1 px-3 bg-yellow-400 text-yellow-900 rounded shadow-lg hover:bg-yellow-300 hover:text-yellow-800 transition duration-300 "
+                                href="#">
                                 Sign Up
                             </a>
                         </div>
@@ -79,80 +79,85 @@
     <!-- CONTEXT OF WEBSITE STARTS HERE -->
     <div class="min-h-screen bg-gray-100 flex flex-col space-y-10 justify-center items-center">
 
-        <img src="./images/tailwind-logo.png" class="border-8 justify-center hover:opacity-90">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-40 w-40 mr-1 text-blue-400" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
         <h1 class="text-5xl font-extrabold">Team5 Blogs</h1>
         <!--Login window starts here-->
-        <div class="login-container bg-white shadow-xl rounded p-5"> 
+        <div class="login-container bg-white shadow-xl rounded p-5">
 
             <form class="space-y-5 mt-5">
                 <p class="text 2x1 font-bold"> Username: </p>
                 <input type="text" class="input-username w-full h-12 border border-blue-400 rounded px-3"
-                    placeholder="Enter Username here" required/>
+                    placeholder="Enter Username here" required />
 
                 <p class="text 2x1 font-bold"> Password: </p>
 
                 <input type="password" class="input-password w-full h-12 border border-blue-400 rounded px-3"
-                    placeholder="Enter Password here" required/>
+                    placeholder="Enter Password here" required />
 
 
-                <button class="btn-login text-center w-full bg-blue-400 rounded-md text-white py-3 font-medium hover:bg-green-400">
+                <button
+                    class="btn-login text-center w-full bg-blue-400 rounded-md text-white py-3 font-medium hover:bg-blue-500">
                     <a href="#">Login</a></button>
 
-                <p class ="text 2x1 font-bold text-center"> Don't have an account?</p>
-
-                <button class="btn-signup text-center w-full bg-blue-400 rounded-md text-white py-3 font-medium hover:bg-green-400">
-                    <a href="#">Sign Up</a></button>
+                <p class="text 2x1 text-center"> Don't have an account?<a href="#"
+                        class="btn-signup text-blue-400 font-bold hover:text-blue-500"> sign up</a> </p>
             </form>
 
         </div>
         <!--Login window ends here-->
 
         <!--Sign up window-->
-        
-        <div class="signup-container hidden bg-white shadow-xl rounded p-5"> 
+        <div class="signup-container hidden bg-white shadow-xl rounded p-5">
 
             <form class="space-y-5 mt-5">
                 <p class="text 2x1 font-bold"> Email Address: </p>
                 <input type="text" class="create-email w-full h-12 border border-blue-400 rounded px-3"
-                    placeholder="Enter Email Address here" required/>
-                <p class = "hidden text-red-600 font-bold" id = "eerror"></p>
+                    placeholder="Enter Email Address here" required />
+                <p class="hidden text-red-600 font-bold" id="eerror"></p>
                 <p class="text 2x1 font-bold"> Username: </p>
 
                 <input type="text" class="create-username w-full h-12 border border-blue-400 rounded px-3"
-                    placeholder="Enter Desired Username here" required/>
-                <p class = "hidden text-red-600 font-bold" id = "uerror"></p>
+                    placeholder="Enter Desired Username here" required />
+                <p class="hidden text-red-600 font-bold" id="uerror"></p>
                 <p class="text 2x1 font-bold"> Password: </p>
 
                 <input type="password" class="create-password w-full h-12 border border-blue-400 rounded px-3"
-                    placeholder="Enter Desired Password here" required/>
+                    placeholder="Enter Desired Password here" required />
 
-                <p class = "hidden text-red-600 font-bold" id = "perror"></p>
-                <button class="btn-create text-center w-full bg-blue-400 rounded-md text-white py-3 font-medium hover:bg-green-400">
+                <p class="hidden text-red-600 font-bold" id="perror"></p>
+                <button
+                    class="btn-create text-center w-full bg-blue-400 rounded-md text-white py-3 font-medium hover:bg-blue-500">
                     <a href="#">Create Account</a></button>
+                <p class="text 2x1 text-center"> Already have an account?<a href="#"
+                        class="text-login text-blue-400 font-bold hover:text-blue-500"> Log in</a> </p>
             </form>
 
         </div>
-        
+
         <!--Sign up window ends-->
-
     </div>
 
-<!-- FOOTER SECTION -->
-<footer class="text-gray-600 body-font fixed bottom-0">
-    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-        <a href="/" class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-9 mr-1 text-blue-400" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
+    <!-- FOOTER SECTION -->
+    <footer class="text-gray-600 body-font fixed bottom-0">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+            <a href="/" class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-9 mr-1 text-blue-400" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
 
-        </a>
-        <span class="ml-3 text-xl">Team5 Blogs</span>
-        <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">©
-            2021 Team5 Blogs
-        </p>
-    </div>
-</footer>
+            </a>
+            <span class="ml-3 text-xl">Team5 Blogs</span>
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">©
+                2021 Team5 Blogs
+            </p>
+        </div>
+    </footer>
 </body>
+
 </html>
