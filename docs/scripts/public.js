@@ -70,36 +70,25 @@ publicPost.forEach(obj => {
     `
 })
 
-const follow = document.querySelector(".followtbtn")
-const unfollow = document.querySelector(".unfollowbtn")
+const follow = document.querySelectorAll(".followtbtn")
+const unfollow = document.querySelectorAll(".unfollowbtn")
+console.log(follow, unfollow)
 
-unfollow.classList.toggle("hidden");
+follow.forEach((btnFollow,index)=>{
 
-follow.addEventListener('click', () => {
+    btnFollow.addEventListener('click', () => {
 
-    follow.classList.toggle("hidden");
-    console.log("hi")
+        btnFollow.classList.add("hidden");
+        unfollow[index].classList.remove("hidden");
+    })
 
-    if (unfollow.classList.toggle("hidden")){
-
-        unfollow.classList.toggle("visible");
-        console.log("hi")
-    }
-    else{
-        alert("error");
-        console.log("hi")
-    }
 })
 
-unfollow.addEventListener('click', () => {
+unfollow.forEach( (btnUnFollow,index)=>{
 
-    unfollow.classList.toggle("hidden");
+    btnUnFollow.addEventListener('click', () => {
+        btnUnFollow.classList.add("hidden");
+        follow[index].classList.remove("hidden");
+    })
 
-    if (follow.classList.toggle("hidden")){
-
-        follow.classList.toggle("visible");
-    }
-    else{
-        alert("error");
-    }
 })

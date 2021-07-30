@@ -31,9 +31,11 @@ let eerrorMessage
 let perrorMessage
 let fakeEmail
 
+// localStorage.clear()
+
 //Event Listeners 
 btnLogIn.addEventListener('click', (e) =>{
-         
+    
     testUser = mockroblog.authenticateUser((inputUsername.value),(inputPassword.value));
     
     
@@ -41,8 +43,11 @@ btnLogIn.addEventListener('click', (e) =>{
     {
         e.preventDefault()
         alert(`Login Successful \n\nWelcome ${testUser.username}`); 
-        location.href = "user.html";
-                
+        /*
+        Local storage
+        */
+        localStorage.setItem('profile', testUser)
+        location.href = "user.html";   
     }
     else if (inputUsername.value == '' || inputUsername.value == null)
     {   
@@ -76,7 +81,7 @@ btnLogIn.addEventListener('click', (e) =>{
 
 btn.addEventListener('click', () => {
     console.log("Hello");
-    menu.classList.add("hidden")
+    menu.classList.toggle("hidden")
 })
 
 btnSignUp.addEventListener('click', () => {

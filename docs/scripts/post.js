@@ -21,3 +21,6 @@ btnPost.addEventListener('click', () => {
     textDisplayPost.textContent = tempUser.text
 })
 
+const user  = localStorage.getItem('Username')
+console.log(user);
+textDisplayPost.textContent = user

@@ -5,10 +5,14 @@ Initialize all components from HTML
 const btn = document.querySelector(".mobile-menu-button")
 const menu = document.querySelector(".mobile-menu")
 const myPost = document.querySelector(".postContainer")
+
+/*
+Api variables
+*/
 const userPost = mockroblog.getUserTimeline('ProfAvery')
 
-//Event Listeners 
 
+//Event Listeners 
 btn.addEventListener('click', () => {
     console.log("Hello");
     menu.classList.toggle("hidden")
