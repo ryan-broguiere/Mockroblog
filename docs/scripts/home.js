@@ -110,6 +110,7 @@ follow.forEach((btnFollow,index)=>{
 
         btnFollow.classList.add("hidden");
         unfollow[index].classList.remove("hidden");
+        unfollow[index].style.backgroundColor = "red"
         follow
         console.log("You followed");
     })
