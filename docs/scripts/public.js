@@ -3,14 +3,13 @@ Initialize all components from HTML
 */
 import * as mockroblog from './mockroblog.js'
 
-const account = JSON.parse(localStorage.getItem('profile'))
 const textPost = document.querySelector(".publicPostContainer") 
 
 const btn = document.querySelector(".mobile-menu-button")
 const menu = document.querySelector(".mobile-menu")
 const publicPost = mockroblog.getPublicTimeline()
 
-
+const account = JSON.parse(localStorage.getItem('profile'))
 //Event Listeners
 
 btn.addEventListener('click', () => {
