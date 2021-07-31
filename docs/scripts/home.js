@@ -5,7 +5,6 @@ import * as mockroblog from './mockroblog.js'
 
 const textPost = document.querySelector(".homePostContainer") 
 
-
 const btn = document.querySelector(".mobile-menu-button")
 const menu = document.querySelector(".mobile-menu")
 const myPost = document.querySelector(".postContainer")
@@ -25,7 +24,7 @@ btn.addEventListener('click', () => {
 homePost.forEach(obj => {
     textPost.innerHTML += `
     <div class="userName pt-5 w-40 px-3 font-bold text-blue-700" >
-    </p>Full Name</p>
+    </p>${obj.user_id}</p>
     </div>
 
     <!--follow button-->
@@ -74,4 +73,28 @@ homePost.forEach(obj => {
             </div>
         </div>
     `
+})
+
+const follow = document.querySelectorAll(".followtbtn")
+const unfollow = document.querySelectorAll(".unfollowbtn")
+
+follow.forEach((btnFollow,index)=>{
+
+    btnFollow.addEventListener('click', () => {
+
+        btnFollow.classList.add("hidden");
+        unfollow[index].classList.remove("hidden");
+        follow
+        console.log("You followed");
+    })
+})
+
+unfollow.forEach( (btnUnFollow,index)=>{
+
+    btnUnFollow.addEventListener('click', () => {
+        btnUnFollow.classList.add("hidden");
+        follow[index].classList.remove("hidden");
+        unfollow
+        console.log("You unfollowed");
+    })
 })
