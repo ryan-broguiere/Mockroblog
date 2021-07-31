@@ -14,6 +14,7 @@ const btn = document.querySelector(".mobile-menu-button")
 const menu = document.querySelector(".mobile-menu")
 const loginContainer = document.querySelector(".login-container")
 const signupContainer = document.querySelector(".signup-container")
+const logoutNav = document.querySelector(".logout-nav")
 const signupNav = document.querySelector(".signup-nav")
 const btnCreate = document.querySelector(".btn-create")
 const createUserEmail = document.querySelector(".create-email")
@@ -94,6 +95,7 @@ btnSignUp.addEventListener('click', () => {
     signupNav.textContent = "Login"  
 })
 
+
 if(localStorage.getItem('loggedin') === 'true')
 {
     const account = JSON.parse(localStorage.getItem('profile'))
@@ -102,8 +104,15 @@ if(localStorage.getItem('loggedin') === 'true')
     signupNav.style.backgroundColor = "red"
     loginContainer.classList.toggle("hidden")
     displayContainer.classList.toggle("hidden")
-    
+    logoutNav.classList.toggle("hidden")
+        
 }
+
+logoutNav.addEventListener('click', () => {
+    localStorage.clear()
+    alert("Successfully logged out.")
+    location.href = "index.html"
+})
 
 signupNav.addEventListener('click', () => {
     if(localStorage.getItem('loggedin') === 'true')
