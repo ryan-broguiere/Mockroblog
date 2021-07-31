@@ -33,7 +33,10 @@ let perrorMessage
 let fakeEmail
 
 //localStorage.clear()
-
+// if(localStorage.getItem('loggedin') === 'true')
+// {
+//     btnSignUp.textContent = 'Log Out'
+// }
 //Event Listeners 
 btnLogIn.addEventListener('click', (e) =>{
     
@@ -107,7 +110,6 @@ btnCreate.addEventListener('click', (e) => {
     
     for (let i =0; i < createUserEmail.value.length; i++)
     {
-        console.log(createUserEmail.value[i])
         if (createUserEmail.value[i] == '@')
         {
             fakeEmail = 0;
@@ -144,6 +146,14 @@ btnCreate.addEventListener('click', (e) => {
         userErrorElement.innerText = uerrorMessage
         uerror.classList.toggle("hidden")
     }
+    else if (createUserAcc.value == "ProfAvery" || createUserAcc.value == "KevinAWortman" || createUserAcc.value == "Beth_CSUF")
+    {
+        e.preventDefault()
+        uerrorMessage = 'Username already taken.'
+        console.log("taken")
+        userErrorElement.innerText = uerrorMessage
+        uerror.classList.toggle("hidden")
+    }
     else if (createUserPassword.value.length < 8 || createUserPassword.value.length > 25)
     {
         e.preventDefault()
@@ -152,9 +162,7 @@ btnCreate.addEventListener('click', (e) => {
         perror.classList.toggle("hidden")
     }
 
-  
-    
-    
+         
 })
 
 
