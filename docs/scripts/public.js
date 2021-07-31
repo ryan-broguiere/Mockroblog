@@ -22,14 +22,22 @@ if(localStorage.getItem('loggedin') === 'true')
     signUpbtn.textContent = 'Log Out'
     signUpbtn.style.backgroundColor = "red"
     logoutNav.classList.toggle("hidden")
+
+    signUpbtn.addEventListener('click', () => {
+        localStorage.clear()
+        alert("Successfully logged out.")
+        location.href = "index.html"
+    })
     
 }
+else
+{
+    signUpbtn.addEventListener('click', () => {
+        location.href = "index.html"
+    }) 
+}
 
-signUpbtn.addEventListener('click', () => {
-    localStorage.clear()
-    alert("Successfully logged out.")
-    location.href = "index.html"
-})
+
 
 btn.addEventListener('click', () => {
     console.log("mobile");
