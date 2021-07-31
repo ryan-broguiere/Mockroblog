@@ -7,6 +7,7 @@ const menu = document.querySelector(".mobile-menu")
 const myPost = document.querySelector(".postContainer")
 const displayUser = document.querySelector(".userName")
 const signUpbtn = document.querySelector('.tempbtn')
+const logoutNav = document.querySelector(".logout-nav")
 
 
 /*
@@ -17,6 +18,9 @@ const account = JSON.parse(localStorage.getItem('profile'))
 if(localStorage.getItem('loggedin') === 'true')
 {
     signUpbtn.textContent = 'Log Out'
+    signUpbtn.style.backgroundColor = "red"
+    logoutNav.classList.toggle("hidden")
+    
 }
 else
 {
@@ -37,6 +41,16 @@ signUpbtn.addEventListener('click', () => {
     location.href = "index.html"
 })
 
+btn.addEventListener('click', () => {
+    console.log("mobile");
+    menu.classList.toggle("hidden")
+})
+
+logoutNav.addEventListener('click', () => {
+    localStorage.clear()
+    alert("Successfully logged out.")
+    location.href = "index.html"
+})
 
 userPost.forEach(obj => {
     myPost.innerHTML += `

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="stylesheet" href="styles/tailwind.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./images/logo.ico">   
     <script type="module" src="scripts/aboutus.js"></script>
 </head>
 
@@ -14,32 +15,44 @@
     <div class="py-8">
         <header>
             <!-- navbar goes here -->
-            <nav class="bg-gray-100  fixed top-0 inset-x-0">
+            <nav class="bg-black  fixed top-0 inset-x-0">
                 <div class="max-w-6xl mx-auto px-4">
                     <div class="flex justify-between">
                         <div class="flex space-x-6">
                             <!-- logo -->
                             <div>
-                                <a href="/" class="flex items-center py-5 px-3 text-gray-700">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-9 mr-1 text-blue-400"
+                                <a href="index.html" class="flex items-center py-5 px-3 text-gray-100 hover:text-blue-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 h-8 w-9 mr-1 text-blue-400"
                                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                                     </svg>
-                                    <span class="font-bold ">Team5 Blogs</span>
+                                    <span class="text-xl text-gray-100 hover:text-blue-300">Team5 Blogs</span>
                                 </a>
                             </div>
                             <!-- primary nav -->
                             <div class=" hidden md:flex items-center space-x-3">
+                                <a href="public.html" class="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 py-5 px-3 text-lg text-gray-100 hover:text-blue-300">
+                                    Public
+                                </a>
+                                <a href="user.html" class="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 py-5 px-3 text-lg text-gray-100 hover:text-blue-300">
+                                    User
+                                </a>
+                                <a href="home.html" class="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 py-5 px-3 text-lg text-gray-100 hover:text-blue-300">
+                                    Home
+                                </a>
+                                <a href="post.html" class="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 py-5 px-3 text-lg text-gray-100 hover:text-blue-300">
+                                    Post
+                                </a>
                             </div>
                         </div>
                         <!-- secondary nav -->
                         <div class="hidden md:flex items-center space-x-1">
-                            <a class="py-5 px-3 text-gray-700 hover:text-blue-500" href="/">
-                                Login
+                            <a class="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 py-5 px-3 text-lg text-gray-100 hover:text-blue-300" href="aboutus.html">
+                                About Us
                             </a>
-                            <a class="py-1 px-3 bg-yellow-400 text-yellow-900 rounded shadow-lg hover:bg-yellow-300 hover:text-yellow-800 transition duration-300 "
-                                href="index.html">
+                            <a class="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 tempbtn py-1 px-3 bg-blue-400 text-lg text-black rounded shadow-lg hover:bg-green-300 hover:text-green-800 transition duration-300 "
+                                href="#">
                                 Sign Up
                             </a>
                         </div>
@@ -47,7 +60,7 @@
                         <div class="md:hidden flex items-center">
                             <button class="mobile-menu-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
+                                    stroke="white">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M4 6h16M4 12h16M4 18h16" />
                                 </svg>
@@ -57,8 +70,11 @@
                 </div>
                 <!-- mobile menu -->
                 <div class="mobile-menu hidden md:hidden bg-gray-100">
-                    <a href="#" class="block py-4 px-4 text-sm hover:bg-gray-200"> Dummy Text </a>
-                    <a href="#" class="block py-4 px-4 text-sm hover:bg-gray-200"> Dummy Text </a>
+                    <a href="/cpsc349-project3/public" class="block py-4 px-4 text-sm hover:bg-gray-200"> Public </a>
+                    <a href="/cpsc349-project3/user" class="block py-4 px-4 text-sm hover:bg-gray-200"> User </a>
+                    <a href="/cpsc349-project3/home" class="block py-4 px-4 text-sm hover:bg-gray-200"> Home </a>
+                    <a href="/cpsc349-project3/post" class="block py-4 px-4 text-sm hover:bg-gray-200"> Post New Message </a>
+                    <a href="#" class = "block py-4 px-4 hidden logout-nav text-red-500 text-sm hover:bg-gray-200"> Log Out </a>
                 </div>
             </nav>
         </header>
@@ -70,7 +86,7 @@
             <div class="flex flex-col text-center w-full mb-20">
                 <h1 class="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">Team5 Blogs Team</h1>
                 <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Feel free to add us or follow us on any of our
-                    social medias listed below. thank for visiting our page
+                    social medias listed below. Thank you for visiting our page.
                 </p>
             </div>
             <div class="flex flex-wrap -m-4">
@@ -85,7 +101,7 @@
                             src="./images/cm-pic.jpeg">
                         <div class="flex-grow sm:pl-8">
                             <h2 class="title-font font-medium text-lg text-gray-900">Christopher Millones</h2>
-                            <h3 class="text-gray-500 mb-3">Senoir Year at CSUF</h3>
+                            <h3 class="text-gray-500 mb-3">Senior Year at CSUF</h3>
                             <p class="mb-4">Was responisble for styling the webpages accross this website and assisting
                                 team members in performing front/back end task.
                             </p>
@@ -142,8 +158,8 @@
                         <div class="flex-grow sm:pl-8">
                             <h2 class="title-font font-medium text-lg text-gray-900">Ryan Broguiere</h2>
                             <h3 class="text-gray-500 mb-3">UI Developer - Senior CS Student at CSUF</h3>
-                            <p class="mb-4">Created the Login and Registration page and assisted with the User interface.</p>
-                            <p class="mb-4">Responsible for the Main page and User validation. </p>
+                            <p class="mb-4">Created the Login/Registration page and styled the User interface to be compatible across all webpages.</p>
+                            <p class="mb-4">Responsible for the Main page, User interface, and User validation. </p>
                             
                             <span class="inline-flex">
                                 <a href="https://github.com/ryan-broguiere" class="text-gray-500">
@@ -169,9 +185,9 @@
                             src="https://dummyimage.com/204x204">
                         <div class="flex-grow sm:pl-8">
                             <h2 class="title-font font-medium text-lg text-gray-900">Nick Lui</h2>
-                            <h3 class="text-gray-500 mb-3">UI Developer</h3>
-                            <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.
-                            </p>
+                            <h3 class="text-gray-500 mb-3">CS Student at CSUF</h3>
+                            <p class="mb-4">Created the base styling for the Home page and Follow/Unfollow feature.</p>
+                            <p class="mb-4">Responsible for the Home timeline page.</p>
                             <span class="inline-flex">
                                 <a href="#" class="text-gray-500">
                                     <img src="./images/github-logo.png" class="h-5 w-5">
@@ -196,9 +212,9 @@
                             src="https://dummyimage.com/206x206">
                         <div class="flex-grow sm:pl-8">
                             <h2 class="title-font font-medium text-lg text-gray-900">Michael Nguyen</h2>
-                            <h3 class="text-gray-500 mb-3">Designer</h3>
-                            <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.
-                            </p>
+                            <h3 class="text-gray-500 mb-3">CS Student at CSUF</h3>
+                            <p class="mb-4">Created the base styling for the Public page and Follow/Unfollow feature.</p>
+                            <p class="mb-4">Responsible for the Public timeline page.</p>
                             <span class="inline-flex">
                                 <a href="#" class="text-gray-500">
                                     <img src="./images/github-logo.png" class="h-5 w-5">
@@ -215,21 +231,35 @@
                 </div>
             </div>
         </div>
+        
+        <div class = "text-center items-center text-2xl">
+        <p class ="font-bold text-4xl underline">Wireframes used</p>
+        <a href = "https://raw.githubusercontent.com/ryan-broguiere/cpsc349-project3/main/docs/images/wireframes/wireframe1.PNG" class = "text-blue-300 hover:text-blue-500 hover:underline ">Landing Page</a><br>
+        <a href = "https://raw.githubusercontent.com/ryan-broguiere/cpsc349-project3/main/docs/images/wireframes/wireframe2.PNG" class = "text-blue-300 hover:text-blue-500 hover:underline ">Home Page</a><br>
+        <a href = "https://raw.githubusercontent.com/ryan-broguiere/cpsc349-project3/main/docs/images/wireframes/wireframe3.PNG" class = "text-blue-300 hover:text-blue-500 hover:underline ">Public Page</a><br>
+        <a href = "https://raw.githubusercontent.com/ryan-broguiere/cpsc349-project3/main/docs/images/wireframes/wireframe4.PNG" class = "text-blue-300 hover:text-blue-500 hover:underline ">User Page</a><br>
+        <a href = "https://raw.githubusercontent.com/ryan-broguiere/cpsc349-project3/main/docs/images/wireframes/wireframe5.PNG" class = "text-blue-300 hover:text-blue-500 hover:underline ">About Us Page</a><br>
+        </div>
     </section>
+
+   
     <!-- FOOTER SECTION -->
-    <footer class="text-gray-600 body-font  bottom-0">
+    <footer class="text-gray-600 bg-black body-font bottom-0">
         <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-            <a href="/" class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-9 mr-1 text-blue-400" fill="none"
+            <a href="index.html" class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                <svg xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 h-8 w-9 mr-1 text-blue-400" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                 </svg>
 
             </a>
-            <span class="ml-3 text-xl">Team5 Blogs</span>
-            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">©
+            <span class="ml-3 text-xl text-gray-100">Team5 Blogs</span>
+            <p class="text-lg text-gray-100 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">©
                 2021 Team5 Blogs
+            </p>
+            <p class="text-lg text-gray-100 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+                CPSC 349 Project 3
             </p>
         </div>
     </footer>
