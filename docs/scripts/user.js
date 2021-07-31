@@ -6,10 +6,16 @@ const btn = document.querySelector(".mobile-menu-button")
 const menu = document.querySelector(".mobile-menu")
 const myPost = document.querySelector(".postContainer")
 
+
+/*
+Extracting object from local storage and parsing it JSON
+*/
+const account = JSON.parse(localStorage.getItem('profile'))
+
 /*
 Api variables
 */
-const userPost = mockroblog.getUserTimeline('ProfAvery')
+const userPost = mockroblog.getUserTimeline(account.username)
 
 
 //Event Listeners 

@@ -21,6 +21,9 @@ btnPost.addEventListener('click', () => {
     textDisplayPost.textContent = tempUser.text
 })
 
-const user  = localStorage.getItem('Username')
-console.log(user);
-textDisplayPost.textContent = user
+/*
+Extracting object from local storage and parsing it JSON
+*/
+const account = JSON.parse(localStorage.getItem('profile'))
+console.log(account.username);
+

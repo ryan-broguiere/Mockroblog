@@ -31,7 +31,7 @@ let eerrorMessage
 let perrorMessage
 let fakeEmail
 
-// localStorage.clear()
+//localStorage.clear()
 
 //Event Listeners 
 btnLogIn.addEventListener('click', (e) =>{
@@ -46,7 +46,8 @@ btnLogIn.addEventListener('click', (e) =>{
         /*
         Local storage
         */
-        localStorage.setItem('profile', testUser)
+        localStorage.setItem('profile', JSON.stringify(testUser))
+        localStorage.setItem('loggedin', 'true')
         location.href = "user.html";   
     }
     else if (inputUsername.value == '' || inputUsername.value == null)
