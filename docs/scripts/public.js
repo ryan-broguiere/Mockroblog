@@ -7,9 +7,12 @@ const textPost = document.querySelector(".publicPostContainer")
 
 const btn = document.querySelector(".mobile-menu-button")
 const menu = document.querySelector(".mobile-menu")
-const addFollower = mockroblog.addFollower()
+const addFollower = mockroblog.addFollower(4,4)
+const removeFollower = mockroblog.removeFollower(4,4)
 const publicPost = mockroblog.getPublicTimeline()
 //Event Listeners
+
+console.log(addFollower)
 
 btn.addEventListener('click', () => {
     console.log("Hello");
@@ -23,18 +26,18 @@ publicPost.forEach(obj => {
     </div>
 
     <!--follow button-->
-    <div class = "container m-1 w-40 h-10 pl-2 pt-2 pb-2">
-        <button class = "followtbtn w-20 h-5 text-white font-bold tracking-wider rounded bg-blue-500 active:bg-blue-700">
+   
+        <button class = "followtbtn w-20 h-5 h-2 pb-2 m-3 text-white font-bold tracking-wider rounded bg-blue-500 active:bg-blue-700">
         follow
         </button> 
-    </div>
+    
 
     <!--unfollow button-->
-    <div class = "container m-1 w-40 h-10 pl-2 pt-2 pb-2">
-        <button class = "unfollowbtn w-20 h-5 text-white font-bold tracking-wider rounded bg-blue-500 active:bg-blue-700">
+    
+        <button class = "unfollowbtn hidden m-3 w-20 h-5 text-white font-bold tracking-wider rounded bg-blue-500 active:bg-blue-700">
         unfollow
         </button> 
-    </div>
+   
     
         <div class="timeline-container"> </div>
         <div class="timeline-pointer" aria-hidden="true">
@@ -72,7 +75,6 @@ publicPost.forEach(obj => {
 
 const follow = document.querySelectorAll(".followtbtn")
 const unfollow = document.querySelectorAll(".unfollowbtn")
-console.log(follow, unfollow)
 
 follow.forEach((btnFollow,index)=>{
 
@@ -80,8 +82,9 @@ follow.forEach((btnFollow,index)=>{
 
         btnFollow.classList.add("hidden");
         unfollow[index].classList.remove("hidden");
+        follow
+        console.log("You followed");
     })
-
 })
 
 unfollow.forEach( (btnUnFollow,index)=>{
@@ -89,6 +92,7 @@ unfollow.forEach( (btnUnFollow,index)=>{
     btnUnFollow.addEventListener('click', () => {
         btnUnFollow.classList.add("hidden");
         follow[index].classList.remove("hidden");
+        unfollow
+        console.log("You unfollowed");
     })
-
 })
