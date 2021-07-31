@@ -23,6 +23,7 @@ const emailErrorElement = document.getElementById('eerror')
 const userErrorElement = document.getElementById('uerror')
 const passwordErrorElement = document.getElementById('perror')
 const textLogin = document.querySelector('.text-login')
+const displayUser = document.getElementById('displayuser')
 
 let testUser
 let createUser
