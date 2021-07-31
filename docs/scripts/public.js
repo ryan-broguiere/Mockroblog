@@ -20,15 +20,12 @@ btn.addEventListener('click', () => {
     menu.classList.toggle("hidden");
 })
 
-let array= [];
-let i=0;
-
 publicPost.forEach(obj => {
 
-    array.push(i);
+
     textPost.innerHTML += `
     <div class="userName pt-5 w-40 px-3 font-bold text-blue-700" >
-    </p> User ID: ${publicPost[i].user_id}</p>
+    </p> User ID: ${obj.user_id}</p>
     </div>
 
     <!--follow button-->
@@ -77,7 +74,7 @@ publicPost.forEach(obj => {
             </div>
         </div>
     `
-    i++;
+
 })
 
 const follow = document.querySelectorAll(".followtbtn")
@@ -95,14 +92,12 @@ follow.forEach((btnFollow,index)=>{
     })
 })
 
-console.log(i);
-
 unfollow.forEach( (btnUnFollow,index)=>{
 
     btnUnFollow.addEventListener('click', () => {
         btnUnFollow.classList.add("hidden");
         follow[index].classList.remove("hidden");
-        const removingFollower = mockroblog.addFollower(publicPost[index].id, account.id);
+        const removingFollower = mockroblog.removeFollower(publicPost[index].id, account.id);
         console.log(removingFollower);
         console.log("you unfollowed User ID:", publicPost[index].user_id);
     })
