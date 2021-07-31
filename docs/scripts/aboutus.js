@@ -14,7 +14,9 @@ btn.addEventListener('click', () => {
 })
 
 if(localStorage.getItem('loggedin') === 'true'){
-    signUpbtn.textContent = 'Sign Out'
+    signUpbtn.textContent = 'Log Out'
+    
+    
 }
 
 

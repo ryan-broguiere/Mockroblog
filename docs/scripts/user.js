@@ -5,35 +5,36 @@ Initialize all components from HTML
 const btn = document.querySelector(".mobile-menu-button")
 const menu = document.querySelector(".mobile-menu")
 const myPost = document.querySelector(".postContainer")
-const displayUser = document.querySelector(".displayUsername")
+const displayUser = document.querySelector(".userName")
 const signUpbtn = document.querySelector('.tempbtn')
 
-
-// if(localStorage.getItem('loggedin') === 'true'){
-//     signUpbtn.textContent = 'Sign Out'
-// }
 
 /*
 Extracting object from local storage and parsing it JSON
 */
 const account = JSON.parse(localStorage.getItem('profile'))
 
-if(localStorage.getItem('loggedin') === 'true'){
-    signUpbtn.textContent = 'Sign Out'
+if(localStorage.getItem('loggedin') === 'true')
+{
+    signUpbtn.textContent = 'Log Out'
+}
+else
+{
+    alert("Please log in first.")
+    location.href = "index.html"
 }
 
 /*
 Api variables
 */
 const userPost = mockroblog.getUserTimeline(account.username)
-
-console.log(`${account.username}`)
-displayUser.textContent = "hello"
+displayUser.textContent = account.username
 
 //Event Listeners 
-btn.addEventListener('click', () => {
-    console.log("Hello");
-    menu.classList.toggle("hidden")
+signUpbtn.addEventListener('click', () => {
+    localStorage.clear()
+    alert("Successfully logged out.")
+    location.href = "index.html"
 })
 
 
