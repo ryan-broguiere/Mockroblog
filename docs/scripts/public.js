@@ -10,6 +10,11 @@ const menu = document.querySelector(".mobile-menu")
 const addFollower = mockroblog.addFollower(4,4)
 const removeFollower = mockroblog.removeFollower(4,4)
 const publicPost = mockroblog.getPublicTimeline()
+
+/*
+Extracting object from local storage and parsing it JSON
+*/
+const account = JSON.parse(localStorage.getItem('profile'))
 //Event Listeners
 
 console.log(addFollower)
