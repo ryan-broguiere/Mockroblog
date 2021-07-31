@@ -17,6 +17,8 @@ const account = JSON.parse(localStorage.getItem('profile'))
 if(localStorage.getItem('loggedin') === 'true')
 {
     signUpbtn.textContent = 'Log Out'
+    signUpbtn.style.backgroundColor = "red"
+    
 }
 else
 {
@@ -37,6 +39,10 @@ signUpbtn.addEventListener('click', () => {
     location.href = "index.html"
 })
 
+btn.addEventListener('click', () => {
+    console.log("mobile");
+    menu.classList.toggle("hidden")
+})
 
 userPost.forEach(obj => {
     myPost.innerHTML += `

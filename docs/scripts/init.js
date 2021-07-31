@@ -23,7 +23,8 @@ const emailErrorElement = document.getElementById('eerror')
 const userErrorElement = document.getElementById('uerror')
 const passwordErrorElement = document.getElementById('perror')
 const textLogin = document.querySelector('.text-login')
-const displayUser = document.getElementById('displayuser')
+const displayUser = document.querySelector(".userName")
+const displayContainer = document.querySelector(".display-container")
 
 let testUser
 let createUser
@@ -32,11 +33,8 @@ let eerrorMessage
 let perrorMessage
 let fakeEmail
 
-//localStorage.clear()
-// if(localStorage.getItem('loggedin') === 'true')
-// {
-//     btnSignUp.textContent = 'Log Out'
-// }
+
+
 //Event Listeners 
 btnLogIn.addEventListener('click', (e) =>{
     
@@ -84,8 +82,9 @@ btnLogIn.addEventListener('click', (e) =>{
   
 })
 
+
 btn.addEventListener('click', () => {
-    console.log("Hello");
+    console.log("mobile");
     menu.classList.toggle("hidden")
 })
 
@@ -95,9 +94,25 @@ btnSignUp.addEventListener('click', () => {
     signupNav.textContent = "Login"  
 })
 
+if(localStorage.getItem('loggedin') === 'true')
+{
+    const account = JSON.parse(localStorage.getItem('profile'))
+    displayUser.textContent = `${account.username}`
+    signupNav.textContent = 'Log Out'
+    signupNav.style.backgroundColor = "red"
+    loginContainer.classList.toggle("hidden")
+    displayContainer.classList.toggle("hidden")
+    
+}
+
 signupNav.addEventListener('click', () => {
-    logInSignupHelper()
-       
+    if(localStorage.getItem('loggedin') === 'true')
+    {
+    localStorage.clear()
+    alert("Successfully logged out.")
+    location.href = "index.html"
+    }
+    logInSignupHelper()      
 })
 
 textLogin.addEventListener('click', () =>{
@@ -166,6 +181,7 @@ btnCreate.addEventListener('click', (e) => {
 })
 
 
+
 // Helper functions
 function logInSignupHelper(){
     loginContainer.classList.toggle("hidden")
@@ -178,5 +194,6 @@ function logInSignupHelper(){
     else
     {
         signupNav.textContent = "Sign Up"
-    } 
+    }    
+   
 }
