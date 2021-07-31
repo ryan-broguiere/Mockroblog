@@ -7,8 +7,6 @@ const textPost = document.querySelector(".publicPostContainer")
 
 const btn = document.querySelector(".mobile-menu-button")
 const menu = document.querySelector(".mobile-menu")
-const addFollower = mockroblog.addFollower(4,4)
-const removeFollower = mockroblog.removeFollower(4,4)
 const publicPost = mockroblog.getPublicTimeline()
 
 /*
@@ -17,36 +15,36 @@ Extracting object from local storage and parsing it JSON
 const account = JSON.parse(localStorage.getItem('profile'))
 //Event Listeners
 
-console.log(addFollower)
-
 btn.addEventListener('click', () => {
     console.log("Hello");
     menu.classList.toggle("hidden");
 })
 
 publicPost.forEach(obj => {
+
+
     textPost.innerHTML += `
     <div class="userName pt-5 w-40 px-3 font-bold text-blue-700" >
-    </p>Full Name</p>
+    </p> User ID: ${obj.user_id}</p>
     </div>
 
     <!--follow button-->
    
-        <button class = "followtbtn w-20 h-5 h-2 pb-2 m-3 text-white font-bold tracking-wider rounded bg-blue-500 active:bg-blue-700">
+        <button class = "followtbtn m-2 w-20 h-5 h-2 pb-2 text-white font-bold tracking-wider rounded bg-blue-500 active:bg-blue-700">
         follow
         </button> 
     
 
     <!--unfollow button-->
     
-        <button class = "unfollowbtn hidden m-3 w-20 h-5 text-white font-bold tracking-wider rounded bg-blue-500 active:bg-blue-700">
+        <button class = "unfollowbtn hidden m-2 w-20 h-5 text-white font-bold tracking-wider rounded bg-blue-500 active:bg-blue-700">
         unfollow
         </button> 
    
     
         <div class="timeline-container"> </div>
         <div class="timeline-pointer" aria-hidden="true">
-            <div class="postContainer bg-white p-6 rounded-md shadow-md">
+            <div class="postContainer bg-white p-2 rounded-md shadow-md">
                 <span
                 <span class="font-bold text-indigo-600 text-sm tracking-wide"> 
                 ${obj.timestamp}</span>
@@ -76,6 +74,7 @@ publicPost.forEach(obj => {
             </div>
         </div>
     `
+
 })
 
 const follow = document.querySelectorAll(".followtbtn")
@@ -87,8 +86,9 @@ follow.forEach((btnFollow,index)=>{
 
         btnFollow.classList.add("hidden");
         unfollow[index].classList.remove("hidden");
-        follow
-        console.log("You followed");
+        const addingFollower = mockroblog.addFollower(publicPost[index].id, account.id);
+        console.log(addingFollower);
+        console.log("you followed User ID:", publicPost[index].user_id);
     })
 })
 
@@ -97,7 +97,8 @@ unfollow.forEach( (btnUnFollow,index)=>{
     btnUnFollow.addEventListener('click', () => {
         btnUnFollow.classList.add("hidden");
         follow[index].classList.remove("hidden");
-        unfollow
-        console.log("You unfollowed");
+        const removingFollower = mockroblog.removeFollower(publicPost[index].id, account.id);
+        console.log(removingFollower);
+        console.log("you unfollowed User ID:", publicPost[index].user_id);
     })
 })
