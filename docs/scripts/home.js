@@ -19,8 +19,6 @@ if(document.URL.includes("home.html"))
     activeLink.classList.add("font-extrabold")
 }
 
-let dateArray = []
-
 if(localStorage.getItem('loggedin') === 'true')
 {
     signUpbtn.textContent = 'Log Out'
@@ -57,7 +55,7 @@ logoutNav.addEventListener('click', () => {
 homePost.forEach(obj => {
     textPost.innerHTML += `
     <div class="userName pt-5 w-40 px-3 font-bold text-blue-700" >
-    </p>${obj.user_id}</p>
+    </p>By user: ${obj.user_id}</p>
     </div>
 
     <!--follow button-->
