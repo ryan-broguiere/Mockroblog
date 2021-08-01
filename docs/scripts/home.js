@@ -11,6 +11,13 @@ const myPost = document.querySelector(".postContainer")
 const homePost = mockroblog.getHomeTimeline('KevinAWortman')
 const logoutNav = document.querySelector(".logout-nav")
 const signUpbtn = document.querySelector('.tempbtn')
+const activeLink = document.querySelector(".navbaraboutuslink")
+
+if(document.URL.includes("home.html"))
+{
+    activeLink.classList.add("text-blue-400")
+    activeLink.classList.add("font-extrabold")
+}
 
 if(localStorage.getItem('loggedin') === 'true')
 {

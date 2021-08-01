@@ -7,6 +7,7 @@ const btn = document.querySelector(".mobile-menu-button")
 const menu = document.querySelector(".mobile-menu")
 const signUpbtn = document.querySelector('.tempbtn')
 const logoutNav = document.querySelector(".logout-nav")
+const activeLink = document.querySelector(".navbaraboutuslink")
 
 //Event Listeners 
 btn.addEventListener('click', () => {
@@ -14,7 +15,11 @@ btn.addEventListener('click', () => {
     menu.classList.toggle("hidden")
 })
 
-
+if(document.URL.includes("aboutus.html"))
+{
+    activeLink.classList.add("text-blue-400")
+    activeLink.classList.add("font-extrabold")
+}
 
 if(localStorage.getItem('loggedin') === 'true')
 {
