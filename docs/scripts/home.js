@@ -12,8 +12,6 @@ const homePost = mockroblog.getHomeTimeline('KevinAWortman')
 const logoutNav = document.querySelector(".logout-nav")
 const signUpbtn = document.querySelector('.tempbtn')
 
-let dateArray = []
-
 if(localStorage.getItem('loggedin') === 'true')
 {
     signUpbtn.textContent = 'Log Out'
@@ -50,7 +48,7 @@ logoutNav.addEventListener('click', () => {
 homePost.forEach(obj => {
     textPost.innerHTML += `
     <div class="userName pt-5 w-40 px-3 font-bold text-blue-700" >
-    </p>${obj.user_id}</p>
+    </p>By user: ${obj.user_id}</p>
     </div>
 
     <!--follow button-->
