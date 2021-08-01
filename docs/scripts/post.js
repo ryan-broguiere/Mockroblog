@@ -10,6 +10,13 @@ const textDisplayPost = document.querySelector(".text-display-post")
 const btnPost = document.querySelector(".btn-post")
 const signUpbtn = document.querySelector('.tempbtn')
 const logoutNav = document.querySelector(".logout-nav")
+const activeLink = document.querySelector(".navbaraboutuslink")
+
+if(document.URL.includes("post.html"))
+{
+    activeLink.classList.add("text-blue-400")
+    activeLink.classList.add("font-extrabold")
+}
 
 let tempUser
 

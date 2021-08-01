@@ -8,7 +8,13 @@ const myPost = document.querySelector(".postContainer")
 const displayUser = document.querySelector(".userName")
 const signUpbtn = document.querySelector('.tempbtn')
 const logoutNav = document.querySelector(".logout-nav")
+const activeLink = document.querySelector(".navbaraboutuslink")
 
+if(document.URL.includes("user.html"))
+{
+    activeLink.classList.add("text-blue-400")
+    activeLink.classList.add("font-extrabold")
+}
 
 /*
 Extracting object from local storage and parsing it JSON

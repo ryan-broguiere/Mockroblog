@@ -18,7 +18,7 @@ btn.addEventListener('click', () => {
 if(document.URL.includes("aboutus.html"))
 {
     activeLink.classList.add("text-blue-400")
-    console.log("hello")
+    activeLink.classList.add("font-extrabold")
 }
 
 if(localStorage.getItem('loggedin') === 'true')
