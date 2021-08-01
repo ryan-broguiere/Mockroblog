@@ -55,7 +55,7 @@ logoutNav.addEventListener('click', () => {
 homePost.forEach(obj => {
     textPost.innerHTML += `
     <div class="userName pt-5 w-40 px-3 font-bold text-blue-700" >
-    </p>By user: ${obj.user_id}</p>
+    </p>User ID: ${obj.user_id}</p>
     </div>
 
     <!--follow button-->
