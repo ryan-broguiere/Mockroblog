@@ -1,4 +1,4 @@
-# Getting started with Project 3
+# How to edit this project
 
 This project uses a simpler configuration that does not use Eleventy
 (though you are welcome to add it yourself).
